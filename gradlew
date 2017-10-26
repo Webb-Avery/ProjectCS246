@@ -24,6 +24,7 @@ die ( ) {
     echo "$*"
     echo
     exit 1
+// you k’s push
 }
 
 # OS specific support (must be 'true' or 'false').
