@@ -26,6 +26,7 @@ die ( ) {
     exit 1
 // you k’s push
 // comment to pull to make sure pull is working 
+// comment again to test merge conflict
 }
 
 # OS specific support (must be 'true' or 'false').
