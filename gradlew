@@ -25,6 +25,7 @@ die ( ) {
     echo
     exit 1
 // you k’s push
+// comment to pull to make sure pull is working 
 }
 
 # OS specific support (must be 'true' or 'false').
