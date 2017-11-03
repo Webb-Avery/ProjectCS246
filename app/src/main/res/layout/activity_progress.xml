@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="team6.projectcs246.Progress">
+
+    <!-- Deacon Progress Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deacon Progress"
+        android:id="@+id/title"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"/>
+
+    <!-- Spiritual Strength Title -->
+    <TextView
+        android:id="@+id/SpiritualStrength"
+        android:text="Spiritual Strength"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="20dp"/>
+
+    <!-- Pray and Study requirement-->
+    <Button
+        android:id="@+id/Pray"
+        android:text="Pray and Study the Scriptures "
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpiritualStrength"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getPray"/>
+
+
+
+    <!-- Live Worthily requirement-->
+    <Button
+        android:id="@+id/Worthily"
+        android:text="Live Worthily"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Pray"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getWorthily"/>
+
+    <!-- Understand Doctrine requirement-->
+    <Button
+        android:id="@+id/Doctrine"
+        android:text="Understand Doctrine"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Worthily"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getDoctrine"/>
+
+    <!-- Priesthood Duties Title -->
+    <TextView
+        android:id="@+id/PriesthoodDuties"
+        android:text="Priesthood Duties"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Doctrine"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="20dp"/>
+
+    <!-- Administer Priesthood requirement-->
+    <Button
+        android:id="@+id/Administer"
+        android:text="Administer Priesthood Ordinances"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PriesthoodDuties"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getAdminister"/>
+
+    <!-- Serve Others requirement-->
+    <Button
+        android:id="@+id/Serve"
+        android:text="Serve Others "
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Administer"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getServe"/>
+
+    <!-- Invite all to come unto Christ requirement-->
+    <Button
+        android:id="@+id/Invite"
+        android:text="Invite all to come unto Christ"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Serve"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getInvite"/>
+
+    <!-- Physical Health Title -->
+    <TextView
+        android:id="@+id/PhysicalHealth"
+        android:text="Physical Health"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Invite"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="20dp"/>
+
+
+    <!-- Create Project requirement-->
+    <Button
+        android:id="@+id/CreateProject"
+        android:text="Create Project"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PhysicalHealth"
+        android:layout_marginTop= "2dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getCreateProject"/>
+
+    <!-- Project requirement-->
+    <Button
+        android:id="@+id/Project"
+        android:text="Project"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CreateProject"
+        android:layout_marginTop= "7dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="getProject"/>
+
+
+</RelativeLayout>
