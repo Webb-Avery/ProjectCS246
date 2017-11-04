@@ -18,16 +18,16 @@ public class ExampleUnitTest {
 
     @Test
     public void login_IsCorrect() {
-        assertThat(Login.signInWithEmailAndPassword("email","password"));
+        assertThat(Login.signInWithEmailAndPassword());
     }
 
     @Test
     public void userName_IsCorrect() {
-        assertThat(Login.askUserName(),true);
+        assertThat(Login.askEmail(),true);
     }
 
     @Test
     public void created_IsCorrect() {
-        assertThat(Login.createUserWithEmailAndPassword("email","password"));
+        assertThat(Login.createUserWithEmailAndPassword());
     }
 }
