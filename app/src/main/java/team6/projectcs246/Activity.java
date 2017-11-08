@@ -49,4 +49,13 @@ public class Activity implements DeaconforStrengthofYouth, DeaconPriesthoodDutie
     public boolean getSigned() {
         return isSigned;
     }
+    
+        // Progress Page
+    public void getProgress(View theButton) {
+        Log.d("MainActivity", "Attempting to create intent to get Progress Activity ");
+
+        Intent progressIntent = new Intent(this, Progress.class);
+        startActivity(progressIntent);
+    }
+    
 }
