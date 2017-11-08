@@ -1,13 +1,19 @@
 package team6.projectcs246;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
-public class Activity implements DeaconforStrengthofYouth, DeaconPriesthoodDuties, DeaconSpiritualStrength {
+public class Activity extends AppCompatActivity implements DeaconforStrengthofYouth, DeaconPriesthoodDuties, DeaconSpiritualStrength {
+    public static final String PREFS_NAME = "MyPrefsFile";
     private String actGoals;
     private String shareNotes;
     private boolean isComplete;
     private boolean isSigned;
+    private String username="youk";
 
     public String getActGoals() {
         return actGoals;
@@ -57,5 +63,26 @@ public class Activity implements DeaconforStrengthofYouth, DeaconPriesthoodDutie
         Intent progressIntent = new Intent(this, Progress.class);
         startActivity(progressIntent);
     }
-    
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        String user = settings.getString("username",username);
+
+        username=user;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("username",username);
+
+        editor.commit();
+    }
 }

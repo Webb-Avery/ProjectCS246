@@ -16,18 +16,19 @@ public class ExampleUnitTest {
         // Sample test
     }
 
-    @Test
-    public void login_IsCorrect() {
-        assertThat(Login.signInWithEmailAndPassword());
-    }
+  //  @Test
+ //   public void login_IsCorrect() {
+ //       assertThat(Login.signInWithEmailAndPassword());
+  //  }
 
-    @Test
-    public void userName_IsCorrect() {
-        assertThat(Login.askEmail(),true);
-    }
+ //   @Test
+ //   public void userName_IsCorrect() {
 
-    @Test
-    public void created_IsCorrect() {
-        assertThat(Login.createUserWithEmailAndPassword());
-    }
+  //  assertThat(Login.askEmail(),true);
+   // }
+
+   // @Test
+ //   public void created_IsCorrect() {
+   //     assertThat(Login.createUserWithEmailAndPassword());
+  //  }
 }

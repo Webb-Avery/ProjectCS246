@@ -23,7 +23,7 @@ public class Login {
         this.password = password;
     }
 
-    public static void askEmail(){
+    public void askEmail(){
 
     }
 
@@ -31,10 +31,10 @@ public class Login {
 
     }
 
-    public static void createUserWithEmailAndPassword(){
+    public void createUserWithEmailAndPassword(){
 
     }
-    public static void signInWithEmailAndPassword(){
+    public void signInWithEmailAndPassword(){
 
     }
 }

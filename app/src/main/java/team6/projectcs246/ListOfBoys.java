@@ -31,9 +31,9 @@ public class ListOfBoys extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_of_boys);
-    }
+   // @Override
+  //  protected void onCreate(Bundle savedInstanceState) {
+  //      super.onCreate(savedInstanceState);
+  //      setContentView(R.layout.activity_list_of_boys);
+  //  }
 }
