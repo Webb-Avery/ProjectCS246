@@ -1,5 +1,7 @@
 package team6.projectcs246;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,15 +15,20 @@ public class Database {
     private JSONObject youngMenInput=new JSONObject();
 
     public JSONObject setYoungMenInput(String youngManName) throws JSONException {
+        Log.d("DatabaseActivity", "Attempting to get name");
+
         youngMenInput.put(youngManName, "name");
         return youngMenInput;
     }
 
     public void sendYoungMenInput(String dName, int uniqID) {
+        Log.d("DatabaseActivity", "Attempting to send name");
         name=dName;
         uniqueId=uniqID;
     }
 
     public void receiveYoungMenInput(String names, int uniqID) {
+
+        Log.d("DatabaseActivity", "Attempting to receive name");
     }
 }
