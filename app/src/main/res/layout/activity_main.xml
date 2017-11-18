@@ -7,14 +7,50 @@
     tools:context="team6.projectcs246.MainActivity">
 
     <!-- Progress-->
-    <Button
-        android:id="@+id/Progress"
-        android:text="Get Progress Page "
-        android:textSize="15sp"
+
+    <EditText
+        android:id="@+id/emailEditTextCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop= "8dp"
-        android:layout_marginLeft="50dp"
-        android:onClick="getProgress"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="122dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/passEditTextCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailEditTextCreate"
+        android:layout_alignStart="@+id/emailEditTextCreate"
+        android:layout_below="@+id/emailEditTextCreate"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/createUserBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passEditTextCreate"
+        android:layout_alignStart="@+id/passEditTextCreate"
+        android:layout_below="@+id/passEditTextCreate"
+        android:layout_marginLeft="61dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="50dp"
+        android:text="Create" />
+
+    <Button
+        android:id="@+id/moveToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="LOGIN" />
 </RelativeLayout>

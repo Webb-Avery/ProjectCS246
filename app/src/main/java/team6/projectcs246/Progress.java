@@ -43,7 +43,7 @@ public class Progress extends AppCompatActivity {
 
     // Administer Requirement
     public void getAdminister(View theButton) {
-        Log.d("ProgressActivity", "Attempting to create intent to get Administer Activity ");
+
 
         Intent requirementIntent = new Intent(this, DeaconAdministerRequirement.class);
         startActivity(requirementIntent);
