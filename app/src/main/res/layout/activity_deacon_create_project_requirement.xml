@@ -46,7 +46,7 @@
 
     <!-- Act Title -->
     <TextView
-        android:id="@+id/Act"
+        android:id="@+id/learn"
         android:text="ACT"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -63,7 +63,7 @@
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Act"
+        android:layout_below="@+id/learn"
         android:layout_marginTop= "10dp"
         android:layout_marginLeft="20dp"/>
 
