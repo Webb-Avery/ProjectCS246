@@ -19,23 +19,21 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.IgnoreExtraProperties;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     public String TAG;
+    private DatabaseReference mDatabase;
 
     //Views and Widget Fields
     Button createUser, moveToLogin;
     EditText userEmailEdit, userPassWordEdit;
 
-
-
-
-    public void onCreate() {
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "The app started");
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-/*
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 // ...
             }
         };
-        */
+
 
         // Assign ID
         createUser = (Button) findViewById(R.id.createUserBtn);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         userPassWordEdit = (EditText) findViewById(R.id.passEditTextCreate);
 
         //Assign Instances
-        mAuth = FirebaseAuth.getInstance();
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
 
 
@@ -97,9 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 userEmailString = userEmailEdit.getText().toString().trim();
                 userPassString  = userPassWordEdit.getText().toString().trim();
 
+
+
                 if(!TextUtils.isEmpty(userEmailString) && !TextUtils.isEmpty(userPassString)){
 
-                    mAuth.createUserWithEmailAndPassword(userEmailString, userPassString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                   mAuth.createUserWithEmailAndPassword(userEmailString, userPassString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                        if(task.isSuccessful()){
@@ -113,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 }
+
+
 
             }
         });
@@ -134,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+
     }
 
     @Override
@@ -146,6 +151,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void getProgress(View theButton){
         startActivity(new Intent(MainActivity.this, Progress.class));
+    }
+
+    @IgnoreExtraProperties
+    public class User {
+        public String password;
+        public String email;
+
+        public User() {}
+
+        public User(String email, String password) {
+            this.password = password;
+            this.email = email;
+        }
+    }
+
+
+    private void writeNewUser(String userId, String email, String password) {
+        User user = new User(email, password);
+
+        mDatabase.child("users").child(userId).setValue(user);
     }
 
 }
