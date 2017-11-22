@@ -34,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onCreate() {
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+        Log.d("MainActivity", "The app started");
+
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 /*
@@ -52,14 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         */
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_main);
-        Log.d("ProgressActivity", "The app started");
 
         // Assign ID
         createUser = (Button) findViewById(R.id.createUserBtn);
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    startActivity(new Intent(MainActivity.this, Progress.class));
+
                 }
             }
         };
@@ -142,5 +144,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void getProgress(View theButton){
+        startActivity(new Intent(MainActivity.this, Progress.class));
+    }
 
 }

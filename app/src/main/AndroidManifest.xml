@@ -16,6 +16,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Progress">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconAdministerRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconServeRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconInviteRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconCreateProjectRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconProjectRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconPrayRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconWorthilyRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeaconDoctrineRequirement">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

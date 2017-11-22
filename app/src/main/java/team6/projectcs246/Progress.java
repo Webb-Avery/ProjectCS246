@@ -7,21 +7,60 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Progress extends AppCompatActivity {
+
+
+    ProgressBar mPrayProgress;
+    TextView mPrayText;
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mPrayRef = mRootRef.child("PrayRequirement");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
+        mPrayProgress = (ProgressBar)findViewById(R.id.prayProgress);
+        mPrayText = (TextView)findViewById(R.id.Pray);
+
+
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("progress", "onStart");
+        mPrayRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //String progress = dataSnapshot.getValue(String.class);
+                //mPrayText.setText(progress);
+                //mPrayProgress.setProgress(progress);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+
+            }
+        });
+    }
 
     // Pray Requirement
     public void getPray(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Pray Activity ");
 
-        Intent requirementIntent = new Intent(this, DeaconPrayRequirement.class);
+        Intent requirementIntent = new Intent(this, MainActivity.class);
         startActivity(requirementIntent);
     }
 

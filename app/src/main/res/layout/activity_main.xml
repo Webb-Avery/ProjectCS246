@@ -53,4 +53,17 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="LOGIN" />
+
+    <Button
+        android:id="@+id/progressTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/moveToLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:onClick="getProgress"
+        android:text="Testing. Takes you to progress screen" />
 </RelativeLayout>

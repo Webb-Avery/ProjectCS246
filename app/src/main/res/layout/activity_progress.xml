@@ -184,7 +184,7 @@
 
             <ProgressBar
                 android:id="@+id/doctrineProgress"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -194,7 +194,7 @@
 
             <ProgressBar
                 android:id="@+id/administerProgress"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/doctrineProgress"
@@ -203,7 +203,7 @@
 
             <ProgressBar
                 android:id="@+id/serveProgress"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/administerProgress"
@@ -212,7 +212,7 @@
 
             <ProgressBar
                 android:id="@+id/inviteProgress"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -221,7 +221,7 @@
 
             <ProgressBar
                 android:id="@+id/createProgress"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -230,7 +230,7 @@
 
             <ProgressBar
                 android:id="@+id/projectProgress"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
