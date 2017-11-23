@@ -1,38 +1,39 @@
 package team6.projectcs246;
-
-import android.content.Intent;
-import android.nfc.Tag;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.IgnoreExtraProperties;
 
-public class MainActivity extends AppCompatActivity {
-    private FirebaseAnalytics mFirebaseAnalytics;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    public String TAG;
-    private DatabaseReference mDatabase;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    // Define Firebase object
+    private FirebaseAuth firebaseAuth;
 
-    //Views and Widget Fields
-    Button createUser, moveToLogin;
-    EditText userEmailEdit, userPassWordEdit;
+    //define view objects
+
+    private Button buttonRegister;
+    private EditText editTextEmail, editTextPassword;
+    private TextView textViewSignin;
+
+    private ProgressDialog progressDialog;
 
 
     @Override
@@ -42,135 +43,66 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "The app started");
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
+
+        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        textViewSignin = (TextView) findViewById(R.id.textViewSignin);
 
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                } else {
-                    // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
-                }
-                // ...
-            }
-        };
+        buttonRegister.setOnClickListener(this);
+        textViewSignin.setOnClickListener(this);
+    }
 
 
-        // Assign ID
-        createUser = (Button) findViewById(R.id.createUserBtn);
-        moveToLogin = (Button) findViewById(R.id.moveToLogin);
-        userEmailEdit = (EditText) findViewById(R.id.emailEditTextCreate);
-        userPassWordEdit = (EditText) findViewById(R.id.passEditTextCreate);
+    private void registerUser() {
+        final String email = editTextEmail.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
 
-        //Assign Instances
+        if (TextUtils.isEmpty(email)) {
+            //email is empty
+            Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show();
+            //stop the method
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            //password is empty
+            Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        //if valdiation are ok
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        //Log.d("MainActivity", "Creditinals entered");
+        //progressDialog.setMessage("Registering User");
+        //progressDialog.show();
 
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+         @Override
+         public void onComplete(@NonNull Task<AuthResult> task) {
+           if (task.isSuccessful()) {
+               FirebaseUser user = firebaseAuth.getCurrentUser();
+               Toast.makeText(MainActivity.this, "Registered Sucessfully", Toast.LENGTH_SHORT).show();
 
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-
-                if (user != null) {
-
-
-                } else {
-
-                }
-            }
-        };
-
-        // On Click Listeners
-
-        createUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String userEmailString, userPassString;
-                userEmailString = userEmailEdit.getText().toString().trim();
-                userPassString  = userPassWordEdit.getText().toString().trim();
-
-
-
-                if(!TextUtils.isEmpty(userEmailString) && !TextUtils.isEmpty(userPassString)){
-
-                   mAuth.createUserWithEmailAndPassword(userEmailString, userPassString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                       if(task.isSuccessful()){
-                           Toast.makeText(MainActivity.this, "User Account Created", Toast.LENGTH_LONG).show();
-                           startActivity(new Intent(MainActivity.this, Progress.class));
-                       }
-                       else {
-                           Toast.makeText(MainActivity.this, "Failed to create user account", Toast.LENGTH_SHORT).show();
-                       }
-
-                        }
-                    });
-                }
-
-
-
-            }
-        });
-        // Move to Login
-        moveToLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(MainActivity.this, Login.class));
-            }
-        });
-
+         } else {
+            Toast.makeText(MainActivity.this, "Registration failed, please try again", Toast.LENGTH_SHORT).show();
         }
 
+                          }
+                });
 
+    }
 
 
     @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if(mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+    public void onClick(View view) {
+        if (view == buttonRegister) {
+            registerUser();
+        }
+        if (view == textViewSignin) {
+            // will open login activity
         }
     }
-
-    public void getProgress(View theButton){
-        startActivity(new Intent(MainActivity.this, Progress.class));
-    }
-
-    @IgnoreExtraProperties
-    public class User {
-        public String password;
-        public String email;
-
-        public User() {}
-
-        public User(String email, String password) {
-            this.password = password;
-            this.email = email;
-        }
-    }
-
-
-    private void writeNewUser(String userId, String email, String password) {
-        User user = new User(email, password);
-
-        mDatabase.child("users").child(userId).setValue(user);
-    }
-
 }
