@@ -1,5 +1,6 @@
 package team6.projectcs246;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 //import android.support.design.widget.FloatingActionButton;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //define view objects
 
-    private Button buttonRegister;
+    private Button buttonRegister, skip;
     private EditText editTextEmail, editTextPassword;
     private TextView textViewSignin;
 
@@ -50,10 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
+        skip = (Button) findViewById(R.id.skip);
 
 
         buttonRegister.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
+        skip.setOnClickListener(this);
     }
 
 
@@ -83,9 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          @Override
          public void onComplete(@NonNull Task<AuthResult> task) {
            if (task.isSuccessful()) {
-               FirebaseUser user = firebaseAuth.getCurrentUser();
-               Toast.makeText(MainActivity.this, "Registered Sucessfully", Toast.LENGTH_SHORT).show();
-
+               finish();
+               startActivity(new Intent(getApplicationContext(), Progress.class));
          } else {
             Toast.makeText(MainActivity.this, "Registration failed, please try again", Toast.LENGTH_SHORT).show();
         }
@@ -102,7 +104,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             registerUser();
         }
         if (view == textViewSignin) {
-            // will open login activity
+            startActivity(new Intent(this, Login.class));
         }
+
+        if (view== skip){
+            startActivity(new Intent(this, Progress.class));
+        }
+
     }
 }
