@@ -25,6 +25,7 @@ public class Progress extends AppCompatActivity {
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mPrayRef  = ref.child("users").child("Avery").child("requirements").child("prayRequirement");
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,9 @@ public class Progress extends AppCompatActivity {
 
     }
 
+    /** OnStart Function
+    Will grab progress from the database and set the progress of each activity
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -62,7 +66,7 @@ public class Progress extends AppCompatActivity {
 
    }
 
-    // Pray Requirement
+    /** Start the Pray Requirement */
     public void getPray(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Pray Activity ");
 
@@ -70,7 +74,7 @@ public class Progress extends AppCompatActivity {
         startActivity(requirementIntent);
     }
 
-    // Worthily Requirement
+    /** Start the Worthily Requirement */
     public void getWorthily(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Worthily Activity ");
 
@@ -78,7 +82,7 @@ public class Progress extends AppCompatActivity {
         startActivity(requirementIntent);
     }
 
-    // Doctrine Requirement
+    /** Start the Doctrine Requirement */
     public void getDoctrine(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Doctrine Activity ");
 
@@ -86,7 +90,7 @@ public class Progress extends AppCompatActivity {
         startActivity(requirementIntent);
     }
 
-    // Administer Requirement
+    /** Start the Administer Requirement */
     public void getAdminister(View theButton) {
 
 
@@ -94,7 +98,7 @@ public class Progress extends AppCompatActivity {
         startActivity(requirementIntent);
     }
 
-    // Serve Requirement
+    /** Start the Serve Requirement */
     public void getServe(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Serve Activity ");
 
@@ -102,7 +106,7 @@ public class Progress extends AppCompatActivity {
         startActivity(requirementIntent);
     }
 
-    // Invite Requirement
+    /** Start the Invite Requirement */
     public void getInvite(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Invite Activity ");
 
@@ -110,15 +114,14 @@ public class Progress extends AppCompatActivity {
         startActivity(requirementIntent);
     }
 
-    // Create Project Requirement
+    /** Start the Create Project Requirement */
     public void getCreateProject(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get CreateProject Activity ");
 
         Intent requirementIntent = new Intent(this, DeaconCreateProjectRequirement.class);
         startActivity(requirementIntent);
     }
-
-    // Project Requirement
+    /** Start the Project Requirement */
     public void getProject(View theButton) {
         Log.d("ProgressActivity", "Attempting to create intent to get Project Activity ");
 
