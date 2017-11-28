@@ -102,6 +102,16 @@
                 android:text="▪ Share what you are learning from your scripture study. For example, you could share with your family, with friends, or in quorum meetings. This will strengthen your testimony of what you’re learning and help you learn how to teach the gospel. It will also strengthen the testimony of others."
                 android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/markComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ShareText"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="80dp"
+                android:text="Mark Activity as Complete"
+                android:onClick="updateComplete"/>
+
 
         </RelativeLayout>
     </ScrollView>

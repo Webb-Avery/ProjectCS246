@@ -82,12 +82,28 @@
     <!-- Share Text -->
     <TextView
         android:id="@+id/ShareText"
-        android:text="Share Text"
-        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Share"
+        android:layout_alignStart="@+id/Share"
         android:layout_below="@+id/Share"
-        android:layout_marginTop= "10dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="27dp"
+        android:text="Share Text"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/markComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ShareText"
+        android:layout_marginTop="53dp"
+        android:layout_toEndOf="@+id/Share"
+        android:layout_toRightOf="@+id/Share"
+        android:onClick="updateComplete"
+        android:text="Mark Activity as Complete" />
+
+
 
 </RelativeLayout>
+

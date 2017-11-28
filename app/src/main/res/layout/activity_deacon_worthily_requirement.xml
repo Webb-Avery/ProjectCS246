@@ -104,6 +104,15 @@
                 android:text="After studying and applying these standards, share with your parents or quorum members what you are learning, how it is infl uencing your life, and the kind of person you are becoming."
                 android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/markComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ShareText"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="80dp"
+                android:text="Mark Activity as Complete"
+                android:onClick="updateComplete"/>
 
         </RelativeLayout>
     </ScrollView>

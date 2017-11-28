@@ -137,6 +137,16 @@
                 android:hint="..."
                 android:textSize="12sp" />
 
+            <Button
+                android:id="@+id/markComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shareInput"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="80dp"
+                android:text="Mark Activity as Complete"
+                android:onClick="updateComplete"/>
+
         </RelativeLayout>
 
     </ScrollView>
