@@ -22,6 +22,7 @@
                 android:layout_alignLeft="@+id/editText9"
                 android:layout_alignStart="@+id/editText9"
                 android:layout_below="@+id/textView12"
+                android:layout_marginRight="20dp"
                 android:text="Share with a parent or quorum members some of your experiences serving others. For example, you could talk about how your service has affected you and the people you have served."
                 android:textSize="12sp" />
 
@@ -42,6 +43,7 @@
                 android:layout_height="28dp"
                 android:hint="..."
                 android:textSize="12sp"
+                android:layout_marginRight="20dp"
                 android:layout_below="@+id/textView10"
                 android:layout_alignLeft="@+id/textView10"
                 android:layout_alignStart="@+id/textView10" />
@@ -63,6 +65,7 @@
                 android:layout_alignLeft="@+id/ActText"
                 android:layout_alignStart="@+id/ActText"
                 android:layout_below="@+id/ActText"
+                android:layout_marginRight="20dp"
                 android:hint="..."
                 android:textSize="12sp" />
 
@@ -98,6 +101,7 @@
                 android:layout_below="@+id/Learn"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
                 android:text="▪ Write down what you learn about serving others from the following scriptures: James 1:27, Mosiah 2:17, and Mosiah 18:8–10. Talk with a parent or quorum leader about the relationship between being a priesthood holder and serving others
 ▪ Discuss with members of your quorum the opportunities you have to serve others (ask your bishop or quorum leaders for ideas). As an Aaronic Priesthood holder, you serve others by assisting your bishop or branch president in “administering . . . temporal things” (D&amp;C 107:68). This may include caring for the poor and needy, cleaning the meetinghouse and grounds, gathering fast offerings, and fulfilling assignments from your quorum president. It could also include service projects you decide to do on your own
 ▪ List some specific things your quorum will do to give service. Also plan several things you will do on your own to give service, including service to members of your family"
@@ -125,6 +129,7 @@
                 android:layout_below="@+id/learn"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
                 android:text="My quorum’s plan to give service:"
                 android:textSize="12sp" />
 

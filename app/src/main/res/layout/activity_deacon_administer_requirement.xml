@@ -22,7 +22,9 @@
                 android:layout_alignLeft="@+id/textView8"
                 android:layout_alignStart="@+id/textView8"
                 android:layout_below="@+id/textView8"
-                android:text="▪ After following through with your plan, discuss with members of your quorum how your experiences with the sacrament have helped you become more reverent."
+                android:layout_marginRight="20dp"
+                android:text="▪ After following through with your plan, discuss with members of your quorum how your experiences with the sacrament have helped you become more reverent.
+"
                 android:textSize="12sp" />
 
             <TextView
@@ -32,6 +34,7 @@
                 android:layout_alignLeft="@+id/editText3"
                 android:layout_alignStart="@+id/editText3"
                 android:layout_below="@+id/editText3"
+                android:layout_marginRight="20dp"
                 android:text="What I will do to have a more meaningful experience when I partake of the sacrament:"
                 android:textSize="12sp" />
 
@@ -43,6 +46,7 @@
                 android:layout_alignStart="@+id/textView3"
                 android:layout_below="@+id/textView3"
                 android:hint="..."
+                android:layout_marginRight="20dp"
                 android:textSize="12sp" />
 
             <TextView
@@ -87,13 +91,34 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/Learn"
                 android:layout_alignStart="@+id/Learn"
+                android:layout_marginRight="20dp"
                 android:layout_below="@+id/Learn"
                 android:text="▪ Read Doctrine and Covenants 20:76–79. What do the sacramental bread and water represent? Read Luke 22:19–20 and 3 Nephi 18:1–11. Whom do you represent when you pass the sacrament?
-▪ Ask your parents or your quorum leaders the following questions, and write their answers:
-    1. What does the ordinance of the sacrament mean to you?
-    2. What can I do as a deacon to help you have a meaningful
-       experience with the sacrament?
-▪ After counseling with your quorum, write on the next page what you will do to pass the sacrament in a way that shows reverence for the Savior and His Atonement and encourages others to show the same reverence. Also write what you will do to have a more meaningful experience when you partake of the sacrament."
+▪ Ask your parents or your quorum leaders the following questions, and write their answers:"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/LearnText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Learn"
+                android:layout_alignStart="@+id/Learn"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/LearnText"
+                android:text="1. What does the ordinance of the sacrament mean to you?
+2. What can I do as a deacon to help you have a meaningful experience with the sacrament?"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/LearnText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Learn"
+                android:layout_alignStart="@+id/Learn"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/LearnText2"
+                android:text="▪ After counseling with your quorum, write on the next page what you will do to pass the sacrament in a way that shows reverence for the Savior and His Atonement and encourages others to show the same reverence. Also write what you will do to have a more meaningful experience when you partake of the sacrament."
                 android:textSize="12sp" />
 
 
@@ -102,7 +127,7 @@
                 android:id="@+id/learn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/LearnText"
+                android:layout_below="@+id/LearnText3"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:text="ACT"
@@ -117,6 +142,7 @@
                 android:layout_alignLeft="@+id/learn"
                 android:layout_alignStart="@+id/learn"
                 android:layout_below="@+id/learn"
+                android:layout_marginRight="20dp"
                 android:text="Several things I will do to show reverence when I pass the sacrament and to encourage others to show the same reverence:"
                 android:textSize="12sp" />
 
@@ -132,6 +158,7 @@
                 android:layout_alignStart="@+id/ActText"
                 android:layout_below="@+id/ActText"
                 android:hint="..."
+                android:layout_marginRight="20dp"
                 android:textSize="12sp" />
 
             <Button
@@ -139,8 +166,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView9"
-                android:layout_marginLeft="137dp"
-                android:layout_marginStart="137dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="80dp"
                 android:text="Mark Activity as Complete"
                 android:onClick="updateComplete"/>
 

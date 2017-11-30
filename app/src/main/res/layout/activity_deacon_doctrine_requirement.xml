@@ -51,6 +51,7 @@
                 android:layout_alignLeft="@+id/shareText"
                 android:layout_alignStart="@+id/shareText"
                 android:layout_below="@+id/shareText"
+                android:layout_marginRight="20dp"
                 android:hint="..."
                 android:textSize="12sp" />
 
@@ -71,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title"
                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="8dp"
                 android:text="LEARN"
                 android:textSize="20sp"
@@ -84,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/Learn"
                 android:layout_alignStart="@+id/Learn"
+                android:layout_marginRight="20dp"
                 android:layout_below="@+id/Learn"
                 android:text="▪ Read Doctrine and Covenants 11:21. What promises does the Lord give to those who study His word? You will need a basic understanding and a testimony of gospel truths to fulfi ll your duties now as a priesthood holder and in the future as a full-time missionary and as a husband and father.
 ▪ Look at the list of doctrinal topics on page 20, and choose four or more that you would like to learn about. One of these should be “The Priesthood and Priesthood Keys.” You can use the scriptures (including the Topical Guide), True to the Faith, Preach My Gospel, and the words of latter-day prophets to learn about these topics.
@@ -134,6 +137,7 @@
                 android:layout_alignLeft="@+id/actText"
                 android:layout_alignStart="@+id/actText"
                 android:layout_below="@+id/actText"
+                android:layout_marginRight="20dp"
                 android:hint="..."
                 android:textSize="12sp" />
 
